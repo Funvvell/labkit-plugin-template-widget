@@ -1,0 +1,8 @@
+/* 卡片专属样式：统一使用 x-starter-card- 前缀，避免污染内置界面。
+   token 来自 docs/DESIGN_SYSTEM.md / css/app.css。 */
+.x-starter-card-num {
+  font-family: var(--mono, ui-monospace, monospace);
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--accent, #007aff);
+}

@@ -1,0 +1,13 @@
+{
+  "id": "starter-card",
+  "name": "入门示例卡片扩展",
+  "version": "1.1.0",
+  "description": "一个多尺寸 Dashboard 卡片，演示 LabKit 卡片扩展契约（只注册卡片，不注册工具）",
+  "author": "Funvvell",
+  "repo": "Funvvell/labkit-plugin-template-widget",
+  "minAppVersion": "0.4.0",
+  "kind": "widget",
+  "main": "main.js",
+  "styles": "styles.css",
+  "sha256": "ce485eab31772ae3c78fa44688d6de53db0407dcea0734df3727c247ce2ff09e"
+}

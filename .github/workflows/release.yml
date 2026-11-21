@@ -1,0 +1,27 @@
+name: Release LabKit Plugin
+
+on:
+  push:
+    # 安装端把 tag_name 原样当版本号拼资产 URL（LabKit plugins.rs resolve），
+    # 因此正式 tag 用裸版本号（如 1.1.0），与 manifest.version 一致。
+    tags: ['v*', '[0-9]*']
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate manifest
+        run: |
+          node -e "const m=require('./manifest.json'); if(!m.id||!m.name||!m.main) process.exit(1); console.log('manifest ok: '+m.id+' '+m.version)"
+      - name: Create release with assets
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            manifest.json
+            main.js
+            styles.css
+          generate_release_notes: true
